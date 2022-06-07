@@ -19,32 +19,32 @@ const zhNumValue={
     万: { value: 10000, secUnit: true },
     亿: { value: 100000000, secUnit: true }
 }
-export const preHander={
+export const preHandler={
     delKeyword(target, rules) {
-        var r = new RegExp(rules, 'g');
+        const r = new RegExp(rules, 'g');
         return target.replace(r, '');
     },
 
     numberTranslator(target) {
-        var tmp = util.reverseStr(target);
-        var rule = new RegExp('[末天日](?=(周|期星))', 'g');
+        let tmp = util.reverseStr(target);
+        const rule = new RegExp('[末天日](?=(周|期星))', 'g');
         tmp = tmp.replace(rule, '7');
         target = util.reverseStr(tmp);
 
-        var section = 0;
-        var number = 0;
-        var rtn = 0;
-        var secUnit = false;
-        var str = target.split('');
-        var result = '';
-        var flag = false;
-        for (var i = 0; i < str.length; i++) {
+        let section = 0;
+        let number = 0;
+        let rtn = 0;
+        let secUnit = false;
+        const str = target.split('');
+        let result = '';
+        let flag = false;
+        for (let i = 0; i < str.length; i++) {
             if (zhNumChar.hasOwnProperty(str[i]) || zhNumValue.hasOwnProperty(str[i])) {
                 flag = true;
                 if (zhNumChar.hasOwnProperty(str[i])) {
                     number = zhNumChar[str[i]];
                 } else {
-                    var unit = zhNumValue[str[i]].value;
+                    const unit = zhNumValue[str[i]].value;
                     secUnit = zhNumValue[str[i]].secUnit;
                     if (secUnit) {
                         section = (section + number) * unit;
@@ -74,8 +74,8 @@ export const preHander={
     },
 
     DBC2CDB(target) {
-        var tmp = '';
-        for (var i = 0; i < target.length; i++) {
+        let tmp = '';
+        for (let i = 0; i < target.length; i++) {
             if (target.charCodeAt(i) > 65248 && target.charCodeAt(i) < 65375) {
                 tmp += String.fromCharCode(target.charCodeAt(i) - 65248);
             } else {

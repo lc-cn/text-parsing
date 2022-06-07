@@ -17,7 +17,7 @@ import {TimePoint} from './timePoint'
 export class TimeUnit {
     private _tp:TimePoint
     public timeExpression:string
-    private _excursion:number[]
+    private readonly _excursion:number[]
     public timeBase:Date
     public isPreferFuture:boolean
     private _tpOrigin:TimePoint

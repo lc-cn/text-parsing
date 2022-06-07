@@ -1,4 +1,4 @@
-import {preHander} from './strPreHanding';
+import {preHandler} from './strPreHanding';
 import {TimeUnit} from './timeUnit';
 import {BaseParser} from "@/parser";
 export interface TimeOptions{
@@ -45,10 +45,10 @@ export default class TimeParser extends BaseParser<string|Date>{
         return tu.timeNormalization(format);
     }
     private _preHandling(expression:string){
-        expression = preHander.delKeyword(expression, '\\s+'); // 清理空白符
-        expression = preHander.delKeyword(expression, '[的]+'); // 清理语气助词
-        expression = preHander.DBC2CDB(expression); // 全角转半角
-        expression = preHander.numberTranslator(expression); // 大写数字转化
+        expression = preHandler.delKeyword(expression, '\\s+'); // 清理空白符
+        expression = preHandler.delKeyword(expression, '[的]+'); // 清理语气助词
+        expression = preHandler.DBC2CDB(expression); // 全角转半角
+        expression = preHandler.numberTranslator(expression); // 大写数字转化
         return expression;
     }
 }
