@@ -1,6 +1,6 @@
 {
   "name": "text-parsing",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "可扩展的nodejs 文本解析库",
   "main": "lib/index.js",
   "scripts": {

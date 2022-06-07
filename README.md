@@ -45,6 +45,6 @@ class CardParser extends BaseParser<string> {
 import {ParserManager} from "text-parsing";
 import {CardParser} from './cardParser'
 const pm=new ParserManager()
-pm.use(new ParserManager(),{location:'china'})//use的第二个参数将传递给parser的parse函数的option
+pm.use(new CardParser(),{location:'china'})//use的第二个参数将传递给parser的parse函数的option
 console.log(pm.parse('515323194803141144'))
 ```
