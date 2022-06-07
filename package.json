@@ -1,30 +1,30 @@
 {
-  "name": "@lc-cn/ts-dev-template",
+  "name": "text-parsing",
   "version": "1.0.0",
-  "description": "ts开发环境配置",
+  "description": "可扩展的nodejs 文本解析库",
   "main": "lib/index.js",
   "scripts": {
-    "start": "node .",
+    "start": "node ./lib/test.js",
     "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
-    "dev": "ts-node-dev -r tsconfig-paths/register ./src/index.ts",
+    "dev": "ts-node-dev -r tsconfig-paths/register ./src/test.ts",
     "pub": "npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lc-cn/ts-dev-template.git"
+    "url": "git+https://github.com/liucl-cn/text-parsing.git"
   },
   "keywords": [
     "ts",
-    "dev",
-    "template"
+    "text",
+    "parsing"
   ],
   "author": "凉菜",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lc-cn/ts-dev-template/issues"
+    "url": "https://github.com/liucl-cn/text-parsing/issues"
   },
-  "homepage": "https://github.com/lc-cn/ts-dev-template#readme",
+  "homepage": "https://github.com/liucl-cn/text-parsing#readme",
   "devDependencies": {
     "@types/node": "latest",
     "ts-node-dev": "latest",

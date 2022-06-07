@@ -1,2 +1,4 @@
-import {sayHello} from "@/hello";
-console.log(sayHello('world'))
+import {ParserManager} from "./parser";
+export * from './parser'
+export * from './module'
+export default ParserManager
